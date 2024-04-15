@@ -5,23 +5,33 @@ Si la personne est une femme dont l’âge est compris entre 18 et 35 ans ou si 
 
 <?php
 
-$Sexe = "F";
-$Age  = 10;
+$Sexe = "H";
+$Age  = 40;
 
 echo "Age : $Age<br>";
 echo "Sexe : $Sexe<br>";
 
-$imposable = false;
-
-if($Sexe = "H" and $Age > 20) {
-    $imposable = true;
-} 
-if($Sexe = "F" and $Age > 17 and $Age < 36) {
-    $imposable = true;
-}
-
-if ($imposable == true) {
+//-------------------------------------------------------
+// VERSION 1 : SANS BOOLEENS
+//-------------------------------------------------------
+if( $Sexe == "H" && $Age > 20 || $Sexe == "F" && $Age > 17 && $Age < 36) {
     echo "La personne est imposable.";
 } else {
     echo "La personne n'est pas imposable.";  
 }
+
+//-------------------------------------------------------
+// VERSION 2 : AVEC BOOLEENS
+//-------------------------------------------------------
+// $imposable = false;
+// if($Sexe == "H" and $Age > 20) {
+//     $imposable = true;
+// } 
+// if($Sexe == "F" and $Age > 17 and $Age < 36) {
+//     $imposable = true;
+// }
+// if ($imposable == true) {
+//     echo "La personne est imposable.";
+// } else {
+//     echo "La personne n'est pas imposable.";  
+// }
